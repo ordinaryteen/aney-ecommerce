@@ -31,6 +31,7 @@ func main() {
 	r.Group(func(r chi.Router) {
 		r.Use(middleware.AuthMiddleware)
 		r.Post("/api/v1/cart", cart.HandleAddToCart)
+		r.Get("/api/v1/cart", cart.HandleGetCart)
 	})
 
 	port := ":8080"
