@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
+	_ "github.com/ordinaryteen/feez-go-api/internal/database"
 )
 
 func main() {
