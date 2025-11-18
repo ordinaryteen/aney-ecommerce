@@ -3,6 +3,7 @@ import { Box } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       {/* Area Konten yang Berubah-ubah */}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* tambah: <Route path="/login" element={<LoginPage />} /> */}
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Box>
   );
