@@ -6,7 +6,6 @@ const ProductCard = ({ product }) => {
   const toast = useToast();
 
   const handleAddToCart = async () => {
-    // 1. Cek Token dulu
     const token = localStorage.getItem('token');
     
     if (!token) {
@@ -23,16 +22,15 @@ const ProductCard = ({ product }) => {
     setIsLoading(true);
 
     try {
-      // 2. Nembak API Backend
       const response = await fetch('http://localhost:8080/api/v1/cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` // <-- Ini kuncinya
+          'Authorization': `Bearer ${token}` 
         },
         body: JSON.stringify({
           product_id: product.id,
-          quantity: 1 // Default 1 dulu biar simpel
+          quantity: 1 
         }),
       });
 
@@ -54,7 +52,7 @@ const ProductCard = ({ product }) => {
     } catch (error) {
       toast({
         title: 'Gagal',
-        description: error.message, // (Misal: Stok tidak cukup)
+        description: error.message,
         status: 'error',
         duration: 3000,
         isClosable: true,
@@ -122,9 +120,9 @@ const ProductCard = ({ product }) => {
             color="white"
             _hover={{ bg: 'brand.600' }}
             size="sm"
-            onClick={handleAddToCart} // <-- Pasang fungsi di sini
+            onClick={handleAddToCart} 
             isLoading={isLoading}
-            isDisabled={product.stock_tersisa <= 0} // Disable kalo stok habis
+            isDisabled={product.stock_tersisa <= 0} 
           >
             {product.stock_tersisa > 0 ? 'Add to Cart' : 'Sold Out'}
           </Button>
