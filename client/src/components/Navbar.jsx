@@ -6,7 +6,7 @@ const Navbar = () => {
     <Box bg="dark" px={4} py={4} borderBottom="1px" borderColor="whiteAlpha.200" position="sticky" top={0} zIndex={10}>
       <Flex alignItems="center" maxW="1200px" mx="auto">
         <Heading size="lg" color="brand.500" letterSpacing="tight">
-          feez.
+          aney.
         </Heading>
 
         <Spacer />

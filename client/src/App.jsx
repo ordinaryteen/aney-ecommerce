@@ -1,12 +1,16 @@
 import React from 'react';
-
-// 1. Import komponen 'Heading'
-import { Heading } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import Navbar from './components/Navbar';
 
 function App() {
-  // 2. TAMPILIN 'Heading' DOANG. Gak pake 'Box', gak pake 'bg="dark"'.
   return (
-    <Heading>APAKAH INI MUNCUL?</Heading>
+    <Box minH="100vh">
+      <Navbar />
+      
+      <Box maxW="1200px" mx="auto" p={4}>
+        <h1>Bleee</h1>
+      </Box>
+    </Box>
   );
 }
 
