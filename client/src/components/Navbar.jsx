@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Flex, Heading, Button, Spacer } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
