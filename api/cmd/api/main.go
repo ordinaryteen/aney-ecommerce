@@ -6,8 +6,8 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/rs/cors"
 
-	// import the  database
 	"github.com/ordinaryteen/feez-go-api/internal/auth"
 	"github.com/ordinaryteen/feez-go-api/internal/cart"
 	_ "github.com/ordinaryteen/feez-go-api/internal/database"
@@ -18,6 +18,15 @@ import (
 
 func main() {
 	r := chi.NewRouter()
+
+	c := cors.New(cors.Options{
+		AllowedOrigins:   []string{"http://localhost:5173"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		AllowCredentials: true,
+		Debug:            true,
+	})
+	r.Use(c.Handler)
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello, feez API! Server is running!"))
