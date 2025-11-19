@@ -48,6 +48,8 @@ Anda perlu membuka **2 Terminal** untuk menjalankan Fullstack app ini.
     ```
     *Website akan berjalan di `http://localhost:5173`*
 
+
+    *Hell nah, I am joking. Taket this: `https://aney-ecommerce.vercel.app/`*
 ---
 
 ## Dokumentasi Detail
